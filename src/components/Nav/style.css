@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    background-color: #000000C2;
+    padding: 20px;
+  }
+  .nav li {
+    margin-left: 40px;
+  }
+  .nav li:first-child {
+    margin-left: 0;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .content {
+    font-weight: 700;
+  }
+  
+  .active {
+    font-weight: 700;
+  }
