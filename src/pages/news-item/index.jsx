@@ -1,5 +1,9 @@
+import { useParams } from "react-router-dom"
+
+
 export const NewsItemPage = () => {
+  const {id} = useParams()
   return (
-      <div>NewsItemPage</div>
+      <div>NewsItemPage {id}</div>
   )
 }
