@@ -13,9 +13,6 @@ export const Nav = () => {
       <li>
         <NavLink to="/news">News</NavLink>
       </li>
-      <li>
-        <NavLink to="/news-item">NewsItem</NavLink>
-      </li>
     </ul>
   )
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "date": "2023-12-15",
+    "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, nam placeat atque adipisci repudiandae omnis quae commodi deleniti quibusdam porro aliquid temporibus acceptnda optio voluptas itaque doloribus nulla. Квисквам, vitae."
+  },
+  {
+    "id": 2,
+    "title": "Dolor sit amet consectetur adipisicing elit.",
+    "date": "2023-12-16",
+    "text": "Dolor sit amet consectetur adipisicing elit. Labore officia, vel doloremque rem iure dolorum odit veritatis perspiciatis, similique unde! Voluptatibus quasi impedit deserunt a, corporis optio recusandae deleniti. Pariatur, inventore. "
+  },
+  {
+    "id": 3,
+    "title": "Lorem ipsum dolor sit amet consectetur.",
+    "date": "2023-12-17",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore quibusdam magni non accusamus sint aperiam veniam corporis officiis repellat fuga quod architecto nihil quisquam, tempore aspernatur. Quod, est vel!"
+  },
+  {
+    "id": 4,
+    "title": "Sit amet consectetur adipisicing elit.",
+    "date": "2023-12-18",
+    "text": "Sit amet consectetur adipisicing elit. Beatae, iure corporis doloremque accusantium aut ex magni laboriosam? Molestiae dolorum voluptatum id debitis nisi, suscipit, totam est alias omnis, vitae reiciendis."
+  },
+  {
+    "id": 5,
+    "title": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "date": "2023-12-19",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet blanditiis dignissimos, deserunt voluptate ut illo vel suscipit optio ipsum veritatis? Amet eaque exercitationem voluptas consequatur aut aliquam vero animi asperiores."
+  },
+  {
+    "id": 6,
+    "title": "Dolor sit amet consectetur adipisicing.",
+    "date": "2023-12-20",
+    "text": "Dolor sit amet consectetur adipisicing elit. Consequatur laborum minima libero nostrum iste tempora nesciunt ullam ab, totam praesentium. Veritatis magnam ipsa numquam similique a, rem officiis accusamus accusantium!"
+  },
+  {
+    "id": 7,
+    "title": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "date": "2023-12-21",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsam consequuntur error quod veritatis, nulla optio repellendus eveniet soluta sequi. Qui quidem, libero ipsa ullam tempore reprehenderit sed doloremque."
+  }
+]

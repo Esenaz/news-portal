@@ -15,7 +15,7 @@ function App() {
           <Route path="/authorization" element={<AuthorizationPage/>} />
           <Route index element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/news-item" element={<NewsItemPage />} />
+          <Route path="/news/:id" element={<NewsItemPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
