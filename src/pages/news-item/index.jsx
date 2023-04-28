@@ -1,5 +1,5 @@
 export const NewsItemPage = () => {
-    return (
-        <div>NewsItemPage</div>
-    )
+  return (
+      <div>NewsItemPage</div>
+  )
 }
