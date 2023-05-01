@@ -1,9 +1,8 @@
 import { useState } from "react"
 
 export const AuthorizationPage = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -43,3 +42,4 @@ export const AuthorizationPage = () => {
     </form>
   )
 }
+
