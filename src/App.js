@@ -6,6 +6,7 @@ import { MainPage } from './pages/main'
 import { AuthorizationPage } from './pages/authorization'
 import { NewsPage } from './pages/news'
 import { NewsItemPage } from './pages/news-item'
+import { ProfilePage } from './pages/profile'
 
 function App() {  
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsItemPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
