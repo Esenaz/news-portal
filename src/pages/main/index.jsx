@@ -1,8 +1,19 @@
+import { CategoryItem } from "../../components/category-item"
+import { Loader } from '../../components/loader'
+import { useMainPage } from "./useMainPage"
 
 export const MainPage = () => {
-    return (
-        <div>Акжол Махмудов Роман Власовду жеңди
-            <img src="https://st-1.akipress.org/st_gallery/50/1425250.c85dc7caf51d1db40bf6ad8ff02da92e.jpg" alt="" />
-        </div>
-    )
+  const { events, loading, error } = useMainPage()
+
+  return (
+    <div>
+      {loading && <Loader />}
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {
+        events.map((e) => (
+          <CategoryItem key={e.id} event={e}/>
+        ))
+      }
+    </div>
+  )
 }
