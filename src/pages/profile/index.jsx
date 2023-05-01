@@ -1,21 +1,32 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export const ProfilePage = () => {
   const [user, setUser] = useState(null)
-
   useEffect(() => {
     fetch("http://localhost:1717/me", {
       headers: {
-        'X-Auth': localStorage()
-      }
-    }
-      
-    )
-      .then(res => res.json())
-      .then(data => {
-        setUser(data)
+        "X-Auth": localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.username) setUser(data);
       })
   }, [])
 
-  return <div>ProfilePage</div>;
+  return (
+    <div>
+      {user ? (
+        <>
+          <div>{user.username}</div>
+          <button onClick={() => localStorage.removeItem("token")}>
+            Log out
+          </button>
+        </>
+      ) : (
+        <Link to="/authorization">Go to Login</Link>
+      )}
+    </div>
+  )
 }
