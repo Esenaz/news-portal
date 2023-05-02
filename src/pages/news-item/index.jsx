@@ -2,7 +2,6 @@ import { useNewsItemPage } from "./useNewsItemPage"
 import { NewsItem } from "../../components/news-item"
 import { Loader } from '../../components/loader'
 
-
 export const NewsItemPage = () => {
   const { newsItem, loading, error } = useNewsItemPage()
 
@@ -19,4 +18,3 @@ export const NewsItemPage = () => {
     </div>
   )
 }
-

@@ -1,6 +1,7 @@
 import { useState } from "react"
+import "../authorization/style.css"
 
-export const AuthorizationPage = () => {
+const AuthorizationPage = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -21,25 +22,31 @@ export const AuthorizationPage = () => {
   }  
 
   return (
-    <form>
-      <input
-        type="text"
-        name="username"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>
-        Log in
-      </button>
-    </form>
+    <div className="container">
+      <div className="logo"></div>
+      <form className="form">
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="input"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="input"
+        />
+        <button onClick={handleLogin} className="button">
+          Log in
+        </button>
+      </form>
+    </div>
   )
 }
 
+export default AuthorizationPage
