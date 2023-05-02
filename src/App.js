@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Layout } from './components/layout'
 import { NotFoundPage } from './pages/not-found'
 import { MainPage } from './pages/main'
-import { AuthorizationPage } from './pages/authorization'
 import { NewsPage } from './pages/news'
 import { NewsItemPage } from './pages/news-item'
 import { ProfilePage } from './pages/profile'
+import AuthorizationPage from './pages/authorization'
 
 function App() {  
   return (
