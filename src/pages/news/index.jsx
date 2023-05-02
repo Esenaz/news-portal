@@ -1,4 +1,4 @@
-import { NewsItem } from "../../components/news-item"
+import { News } from "../../components/news"
 import { Loader } from '../../components/loader'
 import { useNewsPage } from "./useNewsPage"
 
@@ -11,7 +11,7 @@ export const NewsPage = () => {
       {error && <div style={{ color: 'red' }}>{error}</div>}
       {
         newsList.map((item) => (
-          <NewsItem key={item.id} data={item}/>
+          <News key={item.id} data={item}/>
         ))
       }
     </div>
