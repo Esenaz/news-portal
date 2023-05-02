@@ -13,7 +13,8 @@ export const useNewsPage = () => {
     async function fetchNewsList() {
       try {
         setLoading(true)
-        const response = await mockFetch('/news.json')
+        // const response = await mockFetch('/news.json')
+        const response = await fetch(`http://3.208.19.134/api/category/${categoryId}/posts`)
         const data = await response.json()
         setNewsList(data.results)
       } 

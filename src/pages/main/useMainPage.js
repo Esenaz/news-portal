@@ -11,8 +11,8 @@ export const useMainPage = () => {
     async function fetchCategories() {
       try {
         setLoading(true)
-        //const response = await fetch('http://3.208.19.134/api/category/')
-        const response = await mockFetch('/category.json')
+        const response = await fetch('http://3.208.19.134/api/category/')
+        // const response = await mockFetch('/category.json')
         const data = await response.json()
         setCategories(data)
       } 
