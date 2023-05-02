@@ -15,8 +15,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/authorization" element={<AuthorizationPage/>} />
           <Route index element={<MainPage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/news/:id" element={<NewsItemPage />} />
+          <Route path="/news/:categoryId" element={<NewsPage />} />
+          <Route path="/news/:categoryId/:newsId" element={<NewsItemPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />

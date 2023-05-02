@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
-export const NewsItem = ({ event }) => {
+export const NewsItem = ({ data }) => {
+  const { categoryId } = useParams()
+  
   return (
     <div className="news-item">
-      <h1>{event.title}</h1>
-      <p>{event.date}</p>
-      <address>{event.text}</address>
-      <Link to={`/news/${event.id}`}>detail</Link>
+      <h1>{data.title}</h1>
+      <p>{data.publication_date}</p>
+      <address>{data.text}</address>
+      <Link to={`/news/${categoryId}/${data.id}`}>detail</Link>
     </div>
   )
 }
