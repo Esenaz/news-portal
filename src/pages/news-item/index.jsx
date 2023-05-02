@@ -1,14 +1,22 @@
-import { useParams } from "react-router-dom"
-
+import { useNewsItemPage } from "./useNewsItemPage"
+import { News } from "../../components/news"
+import { Loader } from '../../components/loader'
 
 
 export const NewsItemPage = () => {
-  const {id} = useParams()
+  const { newsItem, loading, error } = useNewsItemPage()
+
   return (
-      <div>
-        NewsItemPage {id}
-        
-      </div>
+    <div>
+      {loading && <Loader />}
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {
+        // newsList.map((item) => (
+        //   <News key={item.id} data={item}/>
+        // ))
+        <News data={newsItem}/>
+      }
+    </div>
   )
 }
 
