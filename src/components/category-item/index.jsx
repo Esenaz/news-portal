@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 
-export const CategoryItem = ({ event }) => {
+export const CategoryItem = ({ category }) => {
   return (
     <div className="category-item">
-      <h1>{event.title}</h1>
-      <Link to={`/news/${event.id}`}>detail</Link>
+      <h1>{category.name}</h1>
+      <img src={category.image} />
+      <Link to={`/news/${category.id}`}>detail</Link>
     </div>
   )
 }

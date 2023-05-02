@@ -3,15 +3,15 @@ import { Loader } from '../../components/loader'
 import { useMainPage } from "./useMainPage"
 
 export const MainPage = () => {
-  const { events, loading, error } = useMainPage()
+  const { categories, loading, error } = useMainPage()
 
   return (
     <div>
       {loading && <Loader />}
       {error && <div style={{ color: 'red' }}>{error}</div>}
       {
-        events.map((e) => (
-          <CategoryItem key={e.id} event={e}/>
+        categories.map((e) => (
+          <CategoryItem key={e.id} category={e}/>
         ))
       }
     </div>

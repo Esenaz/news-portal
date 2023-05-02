@@ -1,43 +1,21 @@
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { mockFetch } from "../../utils/mockFetch"
 
-export const useNewsPage1 = () => {
-  const [events, setEvents] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-
-  useEffect(() => {
-    setLoading(true)
-    mockFetch('/events.json')
-      .then(res => res.json())
-      .then(data => {
-        setEvents(data)
-      })
-      .catch((err) => {
-        setError('произошла ошибка')
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [])
-
-  return {
-    events, loading, error
-  }
-}
-
 export const useNewsPage = () => {
-  const [events, setEvents] = useState([])
+  const [newsList, setNewsList] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  // budete ispolzovat v zaprose
+  const { categoryId } = useParams()
 
   useEffect(() => {
-    async function fetchEvents() {
+    async function fetchNewsList() {
       try {
         setLoading(true)
         const response = await mockFetch('/news.json')
         const data = await response.json()
-        setEvents(data)
+        setNewsList(data.results)
       } 
       catch {
         setError('ошибка')
@@ -46,10 +24,10 @@ export const useNewsPage = () => {
         setLoading(false)
       }
     }
-    fetchEvents()
+    fetchNewsList()
   }, [])
 
   return {
-    events, loading, error
+    newsList, loading, error
   }
 }

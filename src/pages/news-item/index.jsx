@@ -8,3 +8,4 @@ export const NewsItemPage = () => {
       <div>NewsItemPage {id}</div>
   )
 }
+
