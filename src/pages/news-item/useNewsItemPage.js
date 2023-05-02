@@ -1,34 +1,33 @@
-// import { useEffect, useState } from "react"
-// import { useParams } from "react-router-dom"
-// import { mockFetch } from "../../utils/mockFetch"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 
-// export const useNewsItemPage = () => {
-//   const [newsItemList, setNewsItemList] = useState([])
-//   const [loading, setLoading] = useState(false)
-//   const [error, setError] = useState('')
-//   // budete ispolzovat v zaprose
-//   const { postsId } = useParams()
+export const useNewsItemPage = () => {
+  const [newsItem, setNewsList] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  // budete ispolzovat v zaprose
+  const { postId } = useParams()
 
-//   useEffect(() => {
-//     async function fetchNewsItemList() {
-//       try {
-//         setLoading(true)
-//         // const response = await mockFetch('/news.json')
-//         const response = await fetch(`http://3.208.19.134/api/category/${categoryId}/posts`)
-//         const data = await response.json()
-//         setNewsItemList(data.results)
-//       } 
-//       catch {
-//         setError('ошибка')
-//       } 
-//       finally {
-//         setLoading(false)
-//       }
-//     }
-//     fetchNewsItemList()
-//   }, [])
+  useEffect(() => {
+    async function fetchNewsItem() {
+      try {
+        setLoading(true)
+        const response = await fetch(`http://3.208.19.134/api/posts/${postId}`)
+        const data = await response.json()
+        setNewsList(data)
+      } 
+      catch {
+        setError('ошибка')
+      } 
+      finally {
+        setLoading(false)
+      }
+    }
+    fetchNewsItem()
+  }, [])
 
-//   return {
-//     newsItemList, loading, error
-//   }
-// }
+  return {
+    newsItem, loading, error
+  }
+}
+

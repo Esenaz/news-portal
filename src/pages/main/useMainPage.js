@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { mockFetch } from "../../utils/mockFetch"
 
 
 export const useMainPage = () => {
@@ -12,7 +11,6 @@ export const useMainPage = () => {
       try {
         setLoading(true)
         const response = await fetch('http://3.208.19.134/api/category/')
-        // const response = await mockFetch('/category.json')
         const data = await response.json()
         setCategories(data)
       } 
