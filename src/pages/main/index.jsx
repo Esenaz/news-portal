@@ -1,14 +1,15 @@
 import { CategoryItem } from "../../components/category-item"
 import { Loader } from '../../components/loader'
 import { useMainPage } from "./useMainPage"
+import "./main-page.css"
 
 export const MainPage = () => {
   const { categories, loading, error } = useMainPage()
 
   return (
-    <div>
+    <div className="main-page-container">
       {loading && <Loader />}
-      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {error && <div className="error-message">{error}</div>}
       {
         categories.map((e) => (
           <CategoryItem key={e.id} category={e}/>
