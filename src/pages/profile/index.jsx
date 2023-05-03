@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 export const ProfilePage = () => {
   const [user, setUser] = useState(null)
   useEffect(() => {
-    fetch("http://localhost:1717/me", {
+    fetch("http://3.208.19.134/login", {
       headers: {
         "X-Auth": localStorage.getItem("token"),
       },
