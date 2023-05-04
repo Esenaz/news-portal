@@ -1,0 +1,53 @@
+header {
+    width: 100vw;
+}
+.nav {
+    display: flex;
+    list-style: none;
+    justify-content:space-around;
+    background-color: black;
+    padding: 20px;
+    width: 100vw;
+    height: 80px;
+  }
+  .newshub {
+    display: flex;
+  }
+
+  .news {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .hub {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    width: 55px;
+    height: 30px;
+    background-color: rgb(238, 150, 17);
+    border-radius: 5px;
+    padding-left: 2px;
+  }
+
+  .nav li {
+    margin-left: 40px;
+  }
+  .nav li:first-child {
+    margin-left: 0;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .content {
+    font-weight: 700;
+  }
+  
+  .active {
+    font-weight: 700;
+  }
