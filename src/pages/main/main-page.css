@@ -1,9 +1,9 @@
 .main-page-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: ce;
     margin: 0 auto;
-    max-width: 1200px;
   }
   
   .error-message {
@@ -11,3 +11,12 @@
     font-weight: bold;
     margin-top: 20px;
   }
+  .slogan {
+    color: black;
+  }
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
