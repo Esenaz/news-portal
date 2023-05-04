@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
-import { Nav } from '../Nav'
+import { Header } from '../header'
 import classes from './style.module.css'
 
 export const Layout = () => {
   return (
     <div>
-      <Nav />
+      <Header />
       <div className={classes.content}>
         <Outlet />
       </div>

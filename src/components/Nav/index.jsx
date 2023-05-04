@@ -4,15 +4,20 @@ import './style.css'
 export const Nav = () => {
   return (
     <ul className="nav">
-      <li>
-        <NavLink to="/authorization">Authorization</NavLink>
+        <div className="newshub">
+        <div className="news">News</div>
+        <div className="hub">hub</div>
+        </div>
+        <li>
+        <NavLink to="/profile">Профиль</NavLink>
       </li>
       <li>
-        <NavLink to="/">Main</NavLink>
+        <NavLink to="/">Главная</NavLink>
       </li>
       <li>
-        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/authorization">Авторизация</NavLink>
       </li>
+
     </ul>
   )
 }
