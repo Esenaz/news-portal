@@ -7,7 +7,7 @@ const AuthorizationPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault()
-    fetch('http://localhost:1717/login', {
+    fetch('http://3.208.19.134/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: {
@@ -16,9 +16,10 @@ const AuthorizationPage = () => {
     })
     .then (res => res.json())
     .then((data) => {
-        localStorage.setItem('token', data.token)
-
+        localStorage.setItem('token', data.username)
+        console.log(data)
     })
+
   }  
 
   return (
@@ -50,3 +51,5 @@ const AuthorizationPage = () => {
 }
 
 export default AuthorizationPage
+
+
