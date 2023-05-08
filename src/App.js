@@ -7,6 +7,7 @@ import { NewsPage } from './pages/news'
 import { NewsItemPage } from './pages/news-item'
 import { ProfilePage } from './pages/profile'
 import AuthorizationPage from './pages/authorization'
+import RegistrationPage from './pages/registration'
 
 function App() {  
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/authorization" element={<AuthorizationPage/>} />
+          <Route path="/registration" element={<RegistrationPage/>} />
           <Route index element={<MainPage />} />
           <Route path="/category/:categoryId" element={<NewsPage />} />
           <Route path="/news/:postId" element={<NewsItemPage />} />
