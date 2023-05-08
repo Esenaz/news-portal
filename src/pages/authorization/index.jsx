@@ -1,13 +1,17 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../authorization/style.css"
+
 
 const AuthorizationPage = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate()
 
   const handleLogin = (e) => {
     e.preventDefault()
-    fetch('http://3.208.19.134/login', {
+    fetch('http://3.208.19.134/api/accounts/token/', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: {
@@ -16,8 +20,8 @@ const AuthorizationPage = () => {
     })
     .then (res => res.json())
     .then((data) => {
-        localStorage.setItem('token', data.username)
-        console.log(data)
+        localStorage.setItem('token', data.token)
+        navigate('/')
     })
 
   }  
@@ -42,9 +46,17 @@ const AuthorizationPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="input"
         />
-        <button onClick={handleLogin} className="button">
-          Log in
-        </button>
+        <Link to={`index`}>
+          <button onClick={handleLogin} className="button">
+            Log in
+          </button>
+        </Link>
+        
+        <Link to={`/registration`}>
+          <button>
+            Create profile
+          </button>
+        </Link>
       </form>
     </div>
   )
