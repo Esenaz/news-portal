@@ -1,4 +1,5 @@
 import { Loader } from '../../components/loader'
+import Comment from '../../components/comment'
 import { useComments } from "./useComments"
 
 export const CommentsList = ({ newsId }) => {
@@ -10,14 +11,14 @@ export const CommentsList = ({ newsId }) => {
       {error && <div className="error-message">{error}</div>}
       {
         comments.map((e) => (
-          <div className="">
+          <div key={e.id}>
             <h5>{e.username}</h5>
             <p>{e.text}</p>
           </div>
         ))
       }
 
-      
+      <Comment newsId={newsId}/>
       
     </div>
   )
