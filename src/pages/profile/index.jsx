@@ -4,14 +4,15 @@ import { Link } from "react-router-dom"
 export const ProfilePage = () => {
   const [user, setUser] = useState(null)
   useEffect(() => {
-    fetch("http://3.208.19.134/login", {
+    fetch("http://3.208.19.134/api/accounts/token/", {
+      method: 'POST',
       headers: {
-        "X-Auth": localStorage.getItem("token"),
+        'Authorization': `Token ${localStorage.getItem('token')}`
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data?.username) setUser(data);
+        console.log(data)
       })
   }, [])
 

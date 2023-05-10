@@ -3,7 +3,7 @@ import { NewsItem } from "../../components/news-item"
 import { Loader } from '../../components/loader'
 
 export const NewsItemPage = () => {
-  const { newsItem, loading, error } = useNewsItemPage()
+  const { newsItem, loading, error, getItem, deleteItem, updateItem } = useNewsItemPage()
 
   return (
     <div>
@@ -13,7 +13,12 @@ export const NewsItemPage = () => {
         // newsList.map((item) => (
         //   <News key={item.id} data={item}/>
         // ))
-        <NewsItem data={newsItem}/>
+        <NewsItem 
+          data={newsItem}
+          deleteItem={deleteItem}
+          updateItem={updateItem}
+          getItem={getItem}
+        />
       }
     </div>
   )
