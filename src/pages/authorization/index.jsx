@@ -54,7 +54,7 @@ const AuthorizationPage = () => {
         </Link>
         
         <Link to={`/registration`}>
-          <button>
+          <button className="create">
             Create profile
           </button>
         </Link>

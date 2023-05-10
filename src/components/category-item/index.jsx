@@ -6,7 +6,9 @@ export const CategoryItem = ({ category }) => {
     <div className="category-item">
       <h1>{category.name}</h1>
       <img src={category.image} />
-      <Link to={`/category/${category.id}`}>detail</Link>
+      <button className="openNews">
+      <Link to={`/category/${category.id}`}>Подробнее</Link>
+      </button>
     </div>
   )
 }
