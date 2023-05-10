@@ -13,7 +13,7 @@ export const useComments = (id) => {
         setLoading(true)
         const response = await fetch(`http://3.208.19.134/api/posts/${id}/comment/`)
         const data = await response.json()
-        setComments(data)
+        setComments(data.results)
       } 
       catch {
         setError('ошибка')

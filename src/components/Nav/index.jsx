@@ -9,14 +9,18 @@ export const Nav = () => {
         <div className="hub">hub</div>
         </div>
         <li>
-        <NavLink to="/profile">Профиль</NavLink>
+        <NavLink to="/authorization">Авторизация</NavLink>
       </li>
       <li>
         <NavLink to="/">Главная</NavLink>
       </li>
-      <li>
-        <NavLink to="/authorization">Авторизация</NavLink>
-      </li>
+      {
+        localStorage.getItem('token') && 
+        <li>
+        <NavLink to="/profile">Профиль</NavLink>
+        </li>
+      }
+      
 
     </ul>
   )

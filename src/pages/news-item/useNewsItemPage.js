@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import { getItemApi, updateItemApi, deleteItemApi } from "./utils"
 
 
 export const useNewsItemPage = () => {
-  const [newsItem, setNewsList] = useState([])
+  const [newsItem, setNewsList] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const { postId } = useParams()
@@ -14,16 +15,13 @@ export const useNewsItemPage = () => {
     async function fetchNewsItem() {
       try {
         setLoading(true)
-        const response = await fetch(`http://3.208.19.134/api/posts/${postId}`)
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json()
+        const data = await getItemApi(postId)
         setNewsList(data)
       } 
       catch {
         setError('ошибка')
         console.log(error)
+        console.log('ошибка')
         if (error) navigate('/')
       } 
       finally {
@@ -32,9 +30,42 @@ export const useNewsItemPage = () => {
     }
     fetchNewsItem()
   }, [])
+ 
+
+  const updateItem = async (formData) => {
+    try {
+      setLoading(true)
+      const data = await updateItemApi(postId, formData)
+      setNewsList(data)
+    } 
+    catch {
+      setError('ошибка')
+      console.log(error)
+      if (error) navigate('/')
+    } 
+    finally {
+      setLoading(false)
+    }
+  }
+
+  const deleteItem = async () => {
+    try {
+      setLoading(true)
+      const data = await deleteItemApi(postId)
+      setNewsList(data)
+    } 
+    catch {
+      setError('ошибка')
+      console.log(error)
+      if (error) navigate('/')
+    } 
+    finally {
+      setLoading(false)
+    }
+  }
 
   return {
-    newsItem, loading, error
+    newsItem, loading, error, deleteItem, updateItem
   }
 }
 

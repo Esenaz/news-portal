@@ -21,6 +21,7 @@ const AuthorizationPage = () => {
     .then (res => res.json())
     .then((data) => {
         localStorage.setItem('token', data.token)
+        localStorage.setItem('username', username)
         navigate('/')
     })
 
