@@ -1,0 +1,29 @@
+footer {
+    background-color: black;
+    height: 150px;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #1da1f2;
+  }
+  .rights {
+    font-size: 8px;
+    margin-top: 20px;
+  }
+  .newshub {
+    margin-bottom: 20px;
+  }

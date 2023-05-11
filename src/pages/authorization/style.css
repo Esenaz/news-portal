@@ -15,6 +15,7 @@
     padding: 40px;
     background-color: white;
     border-radius: 4px;
+    background-color: rgba(204, 199, 199, 0.29);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
@@ -60,4 +61,18 @@
   
   .links a:hover {
     text-decoration: underline;
+  } 
+  .create {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
   }
