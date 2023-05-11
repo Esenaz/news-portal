@@ -3,22 +3,24 @@ import Comment from '../../components/comment'
 import { useComments } from "./useComments"
 
 export const CommentsList = ({ newsId }) => {
-  const { comments, loading, error } = useComments(newsId)
+  const { comments, loading, error, handleComment } = useComments(newsId)
   console.log(newsId)
+  console.log(comments, 'comments')
   return (
     <div>
       {loading && <Loader />}
       {error && <div className="error-message">{error}</div>}
       {
-        comments.map((e) => (
+        comments && Array.isArray(comments) && comments.length
+         ? comments.map((e) => (
           <div key={e.id}>
             <h5>{e.username}</h5>
             <p>{e.text}</p>
           </div>
-        ))
+        )) : null
       }
 
-      <Comment newsId={newsId}/>
+      <Comment newsId={newsId} handleComment={handleComment}/>
       
     </div>
   )

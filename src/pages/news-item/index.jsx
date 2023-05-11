@@ -8,7 +8,7 @@ export const NewsItemPage = () => {
   return (
     <div>
       {loading && <Loader />}
-      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {error && <div style={{ color: 'red' }}>{error.message}</div>}
       {
         // newsList.map((item) => (
         //   <News key={item.id} data={item}/>

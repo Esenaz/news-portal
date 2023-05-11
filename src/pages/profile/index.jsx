@@ -1,33 +1,36 @@
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { CreateNews } from '../../components/news/create';
 
 export const ProfilePage = () => {
-  const [user, setUser] = useState(null)
+  const userName = localStorage.getItem('username');
+  const token = localStorage.getItem('token');
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetch("http://3.208.19.134/api/accounts/token/", {
-      method: 'POST',
-      headers: {
-        'Authorization': `Token ${localStorage.getItem('token')}`
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-      })
-  }, [])
+    if (!token) {
+      navigate('/authorization');
+    }
+  }, []);
 
   return (
     <div>
-      {user ? (
+      {userName ? (
         <>
-          <div>{user.username}</div>
-          <button onClick={() => localStorage.removeItem("token")}>
+          <div>{userName}</div>
+          <CreateNews />
+          <button
+            onClick={() => {
+              localStorage.clear();
+              navigate('/authorization');
+            }}
+          >
             Log out
           </button>
         </>
       ) : (
-        <Link to="/authorization">Go to Login</Link>
+        <Link to='/authorization'>Go to Login</Link>
       )}
     </div>
-  )
-}
+  );
+};
