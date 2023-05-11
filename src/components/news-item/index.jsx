@@ -20,8 +20,10 @@ export const NewsItem = ({ data, deleteItem, updateItem }) => {
       <p>{data.text}</p>
       <p>{data.publication_date}</p>
       <img src={data.image} alt="" />
-      {token && <button onClick={onOpen}>Изменить</button>}
-      {token && <button onClick={deleteItem}>Удалить</button>}
+      <div className="edit">
+      {token && <button className="ed" onClick={onOpen}>Редактировать</button>}
+      {token && <button className="del" onClick={deleteItem}>Удалить</button>}
+      </div>
       <Modal onClose={onClose} isOpen={isOpen} newsInfo={data} updateItem={updateItem}/>
       <CommentsList newsId={data.id}/>
     </div>

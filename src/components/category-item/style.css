@@ -6,6 +6,7 @@
     margin-top: 50px;
 }
 
+
 .category-item img {
     width: 300px;
     height: 300px;
@@ -31,4 +32,24 @@
     color: white;
     font-size: 20px;
     font-weight: 700;
+}
+
+@media screen and (max-width: 400px) {
+    .category-item img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .category-item h1 {
+        font-size: 20px;
+        color: grey;
+        margin-bottom: 10px;
+    }
+    .category-item {
+
+        margin-right: 0px;
+    
+    }
+    
 }

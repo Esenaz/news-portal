@@ -82,7 +82,7 @@ const RegistrationPage = () => {
           className="input"
         />
         <button className="button">
-          Sign up
+          Зарегистрироваться
         </button>
       </form>
     </div>

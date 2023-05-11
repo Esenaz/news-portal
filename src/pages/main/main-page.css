@@ -32,3 +32,18 @@
     margin-bottom: 30px;
   }
 
+  @media screen and (max-width: 400px) {
+    .parallax {
+      width: 100vw;
+      height: 550px;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 20px;
+      margin-bottom: 30px;
+    }
+    .categ {
+      font-size: 25px;
+    }
+  }
+
