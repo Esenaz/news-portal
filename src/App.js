@@ -10,6 +10,7 @@ import AuthorizationPage from './pages/authorization'
 import RegistrationPage from './pages/registration'
 
 function App() {  
+  const token = localStorage.getItem('token')
   return (
     <BrowserRouter>
       <Routes>
@@ -19,6 +20,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="/category/:categoryId" element={<NewsPage />} />
           <Route path="/news/:postId" element={<NewsItemPage />} />
+          
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />

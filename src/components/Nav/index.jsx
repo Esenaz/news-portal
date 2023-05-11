@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom"
 import './style.css'
+import { useState } from "react"
 
 export const Nav = () => {
+  const [token, setToken] = useState(localStorage.getItem('token'))
+
   return (
     <ul className="nav">
         <div className="newshub">
@@ -15,7 +18,7 @@ export const Nav = () => {
         <NavLink to="/">Главная</NavLink>
       </li>
       {
-        localStorage.getItem('token') && 
+        token &&
         <li>
         <NavLink to="/profile">Профиль</NavLink>
         </li>
