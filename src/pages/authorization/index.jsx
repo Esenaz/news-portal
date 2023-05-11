@@ -18,11 +18,24 @@ const AuthorizationPage = () => {
         'Content-Type': 'application/json'
       }
     })
-    .then (res => res.json())
+    .then (res => {
+      if(res.ok) {
+        return res.json()
+      }
+
+      throw new Error('Auth failed')
+    })
     .then((data) => {
-        localStorage.setItem('token', data.token)
-        localStorage.setItem('username', username)
-        navigate('/')
+      if(!data.token) {
+        navigate('/authorization')
+        return
+      }
+      
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('username', username)
+      navigate('/')
+    }).catch((err) => {
+      alert(err)
     })
 
   }  
@@ -53,8 +66,10 @@ const AuthorizationPage = () => {
           </button>
         </Link>
         
+
         <Link to={`/registration`}>
           <button className="create">
+
             Create profile
           </button>
         </Link>

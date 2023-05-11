@@ -18,11 +18,9 @@ export const useNewsItemPage = () => {
         const data = await getItemApi(postId)
         setNewsList(data)
       } 
-      catch {
-        setError('ошибка')
-        console.log(error)
-        console.log('ошибка')
-        if (error) navigate('/')
+      catch(e) {
+        setError(e)
+        if (e) navigate('/', { replace: true })
       } 
       finally {
         setLoading(false)
@@ -37,11 +35,11 @@ export const useNewsItemPage = () => {
       setLoading(true)
       const data = await updateItemApi(postId, formData)
       setNewsList(data)
+      return true;
     } 
-    catch {
-      setError('ошибка')
-      console.log(error)
-      if (error) navigate('/')
+    catch(e) {
+      setError(e)
+      if (e) navigate('/')
     } 
     finally {
       setLoading(false)
@@ -51,13 +49,13 @@ export const useNewsItemPage = () => {
   const deleteItem = async () => {
     try {
       setLoading(true)
-      const data = await deleteItemApi(postId)
-      setNewsList(data)
+      const data = await deleteItemApi(postId);
+      if (data) {
+        navigate('/')
+      }
     } 
-    catch {
-      setError('ошибка')
-      console.log(error)
-      if (error) navigate('/')
+    catch(e) {
+      setError(e)
     } 
     finally {
       setLoading(false)
