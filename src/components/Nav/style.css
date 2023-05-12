@@ -1,5 +1,37 @@
+.burger img {
+    display: none;
+    width: 35px;
+    height: 60px;
+    padding-bottom: 20px;
+}
+
+/* .profile {
+    display: none;
+} */
+
 @media screen and (max-width: 600px) {
     li {
         display: none;
     }
+
+
+    .burger img {
+        display: block;
+        margin-left: 180px;
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    li {
+        display: none;
+    }
+
+
+    .burger img {
+        display: block;
+        margin-left: 80px;
+    }
+
 }
