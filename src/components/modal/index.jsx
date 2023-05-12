@@ -80,7 +80,7 @@ export const Modal = ({ onClose, isOpen, newsInfo, updateItem }) => {
           </button>
         </form>
         
-        <button onClick={onClose}>Close me</button>
+        <button onClick={onClose}>Закрыть</button>
       </div>
     </div>
   )

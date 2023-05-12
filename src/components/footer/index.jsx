@@ -1,6 +1,7 @@
 import "./style.css"
 import React from 'react';
 import { FaTwitter, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,10 +9,13 @@ const Footer = () => {
       <div className="footer-container">
         
         <div className="social-icons">
-          <div className="newshub">
-            <div className="news">News</div>
-            <div className="hub">hub</div>
-          </div>
+        <Link to="/"> {/* Перенаправление на главную страницу */}
+          <div className="newshub-ft">
+        <div className="news">News</div>
+        <div className="hub">hub</div>
+        </div>
+
+      </Link>
           <a href="https://twitter.com/"><FaTwitter /></a>
           <a href="https://www.facebook.com/"><FaFacebook /></a>
           <a href="https://www.instagram.com/"><FaInstagram /></a>

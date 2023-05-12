@@ -1,0 +1,15 @@
+.comment {
+width: 80vw;
+}
+.comment input {
+    width: 100%;
+    height: 100px;
+}
+.comment-btn {
+    background-color: rgb(191, 113, 36);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 80px;
+    height: 24px;
+}

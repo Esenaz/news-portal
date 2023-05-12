@@ -62,15 +62,18 @@ const AuthorizationPage = () => {
         />
         <Link to={`index`}>
           <button onClick={handleLogin} className="button">
-            Log in
+            Войти
           </button>
         </Link>
+
+        <p className="or">или</p>
         
 
         <Link to={`/registration`}>
           <button className="create">
 
-            Create profile
+            Создать профиль
+
           </button>
         </Link>
       </form>

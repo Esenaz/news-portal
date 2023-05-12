@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./style.css"
 
 
 const Comment = ({newsId, handleComment}) => {
@@ -11,8 +12,10 @@ const Comment = ({newsId, handleComment}) => {
 
 
   return (
-    <div className="container">
-      <form>
+    <div className="container-comment">
+   
+      <form className="comment" >
+      <h4>Комментарии</h4>
         {/* <input
           type="text"
           name="username"
@@ -27,13 +30,13 @@ const Comment = ({newsId, handleComment}) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        
-        <button onClick={(e) => {
+
+        <button className="comment-btn" onClick={(e) => {
           e.preventDefault()
           handleComment(text)
           setText('')
           }}>
-          Log in
+          Написать
         </button>
         
       </form>

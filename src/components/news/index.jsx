@@ -8,7 +8,7 @@ export const News = ({ data }) => {
       <h1>{data.title}</h1>
       <p>{data.publication_date}</p>
       <address>{data.text}</address>
-      <Link to={`/news/${data.id}`}>detail</Link>
+      <Link to={`/news/${data.id}`}>Читать полностью</Link>
     </div>
   )
 }
