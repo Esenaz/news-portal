@@ -11,8 +11,13 @@ export const NewsItem = ({ data, deleteItem, updateItem }) => {
 
   const onOpen = () => setOpen(true)
   const onClose = () => setOpen(false)
-  
 
+  const updateTrigger = async (event) => {
+    const result = await updateItem(event);
+    if (result) {
+      setOpen(false);
+    }
+  }
 
   return data && (
     <div className="news-item">
@@ -20,12 +25,14 @@ export const NewsItem = ({ data, deleteItem, updateItem }) => {
       <p>{data.text}</p>
       <p>{data.publication_date}</p>
       <img src={data.image} alt="" />
+
       <div className="edit">
-      {token && <button className="ed" onClick={onOpen}>Редактировать</button>}
+
+      {token && <button  className="ed" onClick={onOpen}>Изменить</button>}
       {token && <button className="del" onClick={deleteItem}>Удалить</button>}
-      </div>
-      <Modal onClose={onClose} isOpen={isOpen} newsInfo={data} updateItem={updateItem}/>
+      <Modal onClose={onClose} isOpen={isOpen} newsInfo={data} updateItem={updateTrigger}/>
       <CommentsList newsId={data.id}/>
+    </div>
     </div>
   )
 }
